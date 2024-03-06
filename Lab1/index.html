@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Безпечний переказ коштів</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<section class="card">
+    <div class="card_header">
+        <img src="https://send.monobank.ua/img/logo_short.png" class="short-logo" alt="monobank logo">
+        <div class="jar" id="jar-container">
+            <img class="jar_bg" src="https://send.monobank.ua/img/jar_bg.png" alt="">
+            <img id="img" class="jar_glass" src="https://send.monobank.ua/img/jar/uah_33.png" alt="">
+            <img id="avatar" class="owner_avatar" src="https://visitukraine.today/media/blog/previews/9bMGFk6hcgF2g7DLB2uel0aNUuRiskr3YDzpCGeM.webp" alt="">
+            <div class="grid-container">
+                <img src="https://send.monobank.ua/img/jar/grid.png" class="grid" alt="">
+                <div class="jar-label jar-goal">25&nbsp;000</div>
+                <div class="jar-label jar-middle">12&nbsp;500</div>
+                <div class="jar-label jar-bottom">0</div>
+            </div>
+            <p class="jar_owner">Артем К. збирає</p>
+            <p class="jar_name">На ремонт медеваку</p>
+        </div>
+        <div class="card_info">
+            <p>
+                Збираємо на ремонт медеваку для<br>
+                4ОТБР танкова бригада
+            </p>
+            <br>
+            <p>Ремонтуємо 2 автівки - Тойоту та Нісан.</p>
+            <br>
+            <p>У бригаді є наші земляки з Черкащини!</p>
+            <br>
+            <p>Ремонт авто треба на вчора! Прохання підтримати!</p>
+        </div>
+        <div class="stats">
+            <div class="stats-data">
+                <img src="https://send.monobank.ua/img/collected.svg" class="stats-data__icon" alt="">
+                <div class="stats-data__text-container">
+                    <div class="stats-data_label">Накопичено</div>
+                    <div id="accumulated-money" class="stats-data_value">1700&nbsp;₴</div>
+                </div>
+            </div>
+            <div class="stats-data">
+                <img src="https://send.monobank.ua/img/target.svg" class="stats-data_icon" alt="">
+                <div class="stats-data_text-container">
+                    <div class="stats-data_label">Ціль</div>
+                    <div class="stats-data_value">25&nbsp;000&nbsp;₴</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card_body">
+        <div class="donation-section">
+            <div class="gradient">
+                <div class="white-elispe">
+                    <div class="donation-text">
+                        <p>Сума поповнення</p>
+                        <img class="dollar" src="https://send.monobank.ua/img/money.png" alt="money">
+                    </div>
+                    <div class="donation-input-amount donation">
+                        <label for="inputNumber"></label><input type="number" min="10" max="29999" value="0" сontent="$" id="inputNumber" oninput="changeColor()">
+                    </div>
+                    <div id="dollar" oninput="changeColor()" class="donation-input-currency donation">₴</div>
+                    <div id="donation-error-message" class="donation-error-message">Сумма повинна бути від 10 ₴ до 29 999 ₴</div>
+                    <div id="btn-donate" class="donation-buttons">
+                        <button id="button100" type="button" class="add-money">+100 ₴</button>
+                        <button id="button500" type="button" class="add-money">+500 ₴</button>
+                        <button id="button1000" type="button" class="add-money">+1000 ₴</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="donaters-info">
+            <label for="donor-name-input"></label><input id="donor-name-input" class="user-input" type="text" name="fio" autocomplete="cc-name" value="" placeholder="Ваше ім'я (необов'язково)" onfocus="if(this.placeholder === 'Ваше ім\'я (необов\'язково)') { this.placeholder = ''; }" onblur="if(this.placeholder === '') { this.placeholder = 'Ваше ім\'я (необов\'язково)'; }">
+            <label for="donation-comments-input"></label><input id="donation-comments-input" class="user-input" type="text" name="fio" autocomplete="cc-name" value="" placeholder="Коментар (необов'язково)" onfocus="if(this.placeholder === 'Коментар (необов\'язково)') { this.placeholder = ''; }" onblur="if(this.placeholder === '') { this.placeholder = 'Коментар (необов\'язково)'; }">
+        </div>
+        <div id="mono-pay-button" class="button-bank">
+            <img src="https://send.monobank.ua/img/mono_pay.svg" alt="mono Pay" class="logo-mono">
+        </div>
+        <div id="google-pay-button" class="button-bank">
+            <img src="https://www.gstatic.com/instantbuy/svg/dark_gpay.svg" alt="g-pay" class="logo-gpay">
+        </div>
+        <div class="another-pay">
+            <hr id="hideHr" class="splitter">
+            <div id="toggleButton" class="card-input-button">
+                <img src="https://send.monobank.ua/img/card.svg" alt="Credit card" class="card-icon">
+                <div class="card-input-label">Оплатити карткою</div>
+            </div>
+        </div>
+        <div id="hiddenElement" class="another-card">
+            <div class="another-card__info">
+                <hr class="line-one splitter">
+                <p class="change-card">або уведіть дані картки</p>
+                <hr class="line-one splitter">
+            </div>
+            <div class="donaters-info">
+                <label for="card-number-input"></label><input id="card-number-input" class="user-input" type="text" name="fio" autocomplete="cc-name" value="" placeholder="Номер картки" onfocus="if(this.placeholder === 'Номер картки') { this.placeholder = ''; }" onblur="if(this.placeholder === '') { this.placeholder = 'Номер картки'; }">
+            </div>
+            <div class="donaters-info user-input cvv">
+                <label for="card-expiration-month"></label><input id="card-expiration-month" class="data-type" type="text" name="month" autocomplete="cc-name" value="" placeholder="Місяць" onfocus="if(this.placeholder === 'Місяць') { this.placeholder = ''; }" onblur="if(this.placeholder === '') { this.placeholder = 'Місяць'; }">
+                <hr class="vertical-hr">
+                <label for="card-expiration-year"></label><input id="card-expiration-year" class="data-type" type="text" name="fio" autocomplete="cc-name" value="" placeholder="Рік" onfocus="if(this.placeholder === 'Рік') { this.placeholder = ''; }" onblur="if(this.placeholder === '') { this.placeholder = 'Рік'; }">
+                <hr class="vertical-hr">
+                <label for="card-cvv-input"></label><input id="card-cvv-input" class="data-type" type="text" name="fio" autocomplete="cc-name" value="" placeholder="CVC2" onfocus="if(this.placeholder === 'CVC2') { this.placeholder = ''; }" onblur="if(this.placeholder === '') { this.placeholder = 'CVC2'; }">
+            </div>
+            <div id="bank-deposit-submit-button" class="bank-deposit-button">Поповнити банку</div>
+        </div>
+    </div>
+</section>
+<footer>
+    <div class="info">
+        <div class="footer-copyright-info">
+            АТ «УНІВЕРСАЛ БАНК» Ліцензія НБУ №92 від<br>
+            20.01.1994, у держреєстрі банків №226
+        </div>
+        <div class="button-footer">
+            <div class="lottery-widget white-buttons">
+                <img class="white-icon" src="https://send.monobank.ua/img/cup.svg" alt="cup">
+                <div class="widget-button-icon-text">Провести розіграш</div>
+            </div>
+            <div class="stream-widget white-buttons">
+                <img class="white-icon" src="https://send.monobank.ua/img/gamepad.svg" alt="joistic">
+                <div class="widget-button-icon-text">Віджет для стрімів</div>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
